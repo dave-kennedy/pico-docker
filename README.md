@@ -28,3 +28,9 @@ $ ./docker-run.sh
 $ docker exec -it pico_dev sh
 ```
 
+# Watch the logs
+
+```
+$ docker logs -f pico_dev
+```
+
