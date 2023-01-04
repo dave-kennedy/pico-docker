@@ -6,10 +6,11 @@ if [ ! -f vendor/autoload.php ]; then
     echo 'Installing Composer...'
     apk -U upgrade
     apk add curl php8-curl php8-openssl php8-phar
-    curl -LSs https://getcomposer.org/installer | php8
+    curl -LSs https://getcomposer.org/installer | php
 
     echo 'Installing Pico CMS...'
-    php8 composer.phar install
+    php composer.phar config allow-plugins.picocms/composer-installer true
+    php composer.phar install
 fi
 
 echo 'Starting HTTP server...'
